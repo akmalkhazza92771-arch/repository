@@ -243,9 +243,9 @@
         header .logo { 
             font-family: 'Montserrat', sans-serif;
             color: var(--color-primary); 
-            font-size: 1.8rem; 
+            font-size: 1.3rem; /* UKURAN DIKECILKAN DARI 1.8rem */
             font-weight: 900; 
-            letter-spacing: 3px; 
+            letter-spacing: 2px; /* SEDIKIT DISESUAIKAN AGAR RAPI */
             cursor: pointer;
         }
 
@@ -474,48 +474,26 @@
             background-color: var(--color-misty-gray) !important;
         }
 
-        /* --- OPTIMASI KHUSUS MOBILE --- */
         @media (max-width: 768px) {
-            .container { width: 92%; }
-            
             header .container { 
                 flex-direction: row; 
                 justify-content: space-between; 
-                padding: 0 10px;
+                padding: 0 15px;
             }
-            header .logo { font-size: 1.1rem; letter-spacing: 1px; }
-            header nav ul li { margin-left: 10px; }
-            header nav ul li a { font-size: 0.7rem; }
+            header .logo { font-size: 1.1rem; letter-spacing: 1px; } /* UKURAN MOBILE JUGA DISESUAIKAN */
+            header nav ul li { margin-left: 15px; }
+            header nav ul li a { font-size: 0.75rem; }
             
-            .hero { min-height: 70vh; padding: 20px 0; }
-            .hero-logos { gap: 10px; margin-bottom: 25px; padding: 0 10px; }
-            .hero-logos img { width: 30%; max-width: 90px; }
+            .hero-logos { gap: 10px; }
+            .hero-logos img { width: 30%; max-width: 100px; }
+
+            .info-card { min-width: 100%; }
+            .service-box, .contact-container { padding: 40px 20px; border-radius: 15px; width: 95%; }
+            .btn { min-width: 100%; }
             
-            .section-title h3 { font-size: 1.8rem; }
-            .service-box, .contact-container { padding: 30px 15px; border-radius: 15px; width: 100%; margin: 20px auto; }
-            
-            .btn { min-width: 100%; padding: 14px 20px; font-size: 0.9rem; }
-            
-            /* Gambar di halaman detail agar tidak gepeng/terpotong */
-            .detail-image, .rph-custom-image, .gym-small-image { 
-                height: 220px !important; 
-                width: 100% !important;
-                object-fit: cover;
-                border-radius: 10px;
-            }
-            
-            .description-box { padding: 20px; margin-bottom: 30px; }
-            .description-box p { font-size: 0.95rem; }
-            
-            .info-card { padding: 20px 15px; min-width: 100%; }
-            .info-card h4 { font-size: 1.1rem; }
-            
-            .room-gallery { grid-template-columns: 1fr; }
-            .room-card img { height: 180px; }
-            
-            .white-card-box { padding: 30px 15px; margin: 20px auto; }
-            
-            .detail-header .service-title-bg h2 { font-size: 1.1rem; }
+            .rph-custom-image { height: 250px !important; }
+            .gym-small-image { height: 250px !important; max-width: 100% !important; }
+            .detail-header .service-title-bg h2 { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -554,7 +532,7 @@
                 <div class="service-box">
                     <div class="section-title light">
                         <h3>Layanan Unggulan</h3>
-                        <p>Solusi penginapan, pendidikan, dan kesehatan fisik Anda</p>
+                        <p>Solusi penginapan, pendidikan, and kesehatan fisik Anda</p>
                         <div></div>
                     </div>
                     <div class="layanan-list">
@@ -676,7 +654,7 @@
                         <div class="item-card"><i class="fas fa-user-shield"></i><span>TARUNA / BINTARA / TAMTAMA</span></div>
                         <div class="item-card"><i class="fas fa-shield-alt"></i><span>TNI & POLRI</span></div>
                         <div class="item-card"><i class="fas fa-university"></i><span>IPDN & Sekolah Kedinasan</span></div>
-                        <div class="item-card"><i class="fas fa-file-alt"></i><span>Psikotes & Akademik</span></div>
+                        <div class="item-card"><i class="fas fa-file-alt"></i><span>Persiapan Psikotes & Akademik</span></div>
                     </div>
                 </div>
 
