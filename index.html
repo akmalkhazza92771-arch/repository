@@ -43,7 +43,7 @@
         .rph-custom-image {
             width: 100% !important;
             max-width: 900px;
-            height: 200px !important; 
+            height: 600px !important; 
             object-fit: cover;
             border-radius: 15px;
             margin: 0 auto 20px auto;
@@ -88,7 +88,7 @@
         }
 
         .detail-header .service-title-bg h2 {
-            font-size: 1.3rem; /* Ukuran teks judul di halaman detail diperkecil agar proporsional */
+            font-size: 1.4rem; /* Ukuran teks judul di halaman detail diperkecil agar proporsional */
             margin: 0;
         }
 
@@ -243,9 +243,9 @@
         header .logo { 
             font-family: 'Montserrat', sans-serif;
             color: var(--color-primary); 
-            font-size: 0.8rem; /* UKURAN DIKECILKAN DARI 1.8rem */
+            font-size: 1.8rem; 
             font-weight: 900; 
-            letter-spacing: 2px; /* SEDIKIT DISESUAIKAN AGAR RAPI */
+            letter-spacing: 3px; 
             cursor: pointer;
         }
 
@@ -262,6 +262,24 @@
             cursor: pointer;
         }
         header nav ul li a:hover, header nav ul li a.active { color: var(--color-primary); }
+
+        /* Style untuk Tombol Titik Tiga (Mobile) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
 
         .page { display: none; min-height: 80vh; animation: pageIn 0.6s ease-out; }
         .page.active { display: block; }
@@ -474,15 +492,42 @@
             background-color: var(--color-misty-gray) !important;
         }
 
+        /* MEDIA QUERY UNTUK TAMPILAN HANDPHONE */
         @media (max-width: 768px) {
             header .container { 
-                flex-direction: row; 
-                justify-content: space-between; 
-                padding: 0 15px;
+                padding: 0 20px;
             }
-            header .logo { font-size: 1.1rem; letter-spacing: 1px; } /* UKURAN MOBILE JUGA DISESUAIKAN */
-            header nav ul li { margin-left: 15px; }
-            header nav ul li a { font-size: 0.75rem; }
+            
+            .menu-toggle {
+                display: flex; /* Titik tiga muncul */
+            }
+
+            header nav ul {
+                display: none; /* Menu disembunyikan secara default di mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.95);
+                padding: 20px 0;
+                border-bottom: 2px solid var(--color-primary);
+                text-align: center;
+            }
+
+            header nav ul.show {
+                display: flex; /* Muncul ketika tombol diklik */
+            }
+
+            header nav ul li {
+                margin: 15px 0;
+            }
+
+            header nav ul li a {
+                font-size: 1rem;
+            }
+
+            header .logo { font-size: 1.4rem; }
             
             .hero-logos { gap: 10px; }
             .hero-logos img { width: 30%; max-width: 100px; }
@@ -502,8 +547,15 @@
     <header>
         <div class="container">
             <h1 class="logo" onclick="showPage('beranda')">RUMAH PINTAR HAAN</h1>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a onclick="showPage('beranda')" id="nav-beranda" class="active">Beranda</a></li>
                     <li><a onclick="showPage('layanan')" id="nav-layanan">Layanan</a></li>
                     <li><a onclick="showPage('kontak')" id="nav-kontak">Kontak</a></li>
@@ -532,7 +584,7 @@
                 <div class="service-box">
                     <div class="section-title light">
                         <h3>Layanan Unggulan</h3>
-                        <p>Solusi penginapan, pendidikan, and kesehatan fisik Anda</p>
+                        <p>Solusi penginapan, pendidikan, dan kesehatan fisik Anda</p>
                         <div></div>
                     </div>
                     <div class="layanan-list">
@@ -751,6 +803,12 @@
     </footer>
 
     <script>
+        // Fungsi untuk buka-tutup menu mobile
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
         function showPage(pageId) {
             window.scrollTo({top: 0, behavior: 'smooth'});
             const pages = document.querySelectorAll('.page');
@@ -764,6 +822,12 @@
                 document.getElementById('nav-layanan').classList.add('active');
             } else if (document.getElementById('nav-' + pageId)) {
                 document.getElementById('nav-' + pageId).classList.add('active');
+            }
+
+            // Menutup menu mobile setelah item diklik
+            const navMenu = document.getElementById('navLinks');
+            if (navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
             }
         }
     </script>
