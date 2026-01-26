@@ -18,6 +18,28 @@
             --color-misty-gray: #BCC6CC; 
         }
 
+        /* Kode untuk Note Card Cream */
+        .note-card-cream {
+            background-color: #FFFDD0; /* Warna Cream */
+            border-left: 6px solid var(--color-primary);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .note-card-cream p {
+            color: #444;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin: 0;
+            font-style: italic;
+        }
+
         .gym-custom-image {
             width: 100% !important;
             max-width: 900px;
@@ -28,7 +50,6 @@
             display: block;
         }
 
-        /* Kode baru untuk memperkecil gambar gym */
         .gym-small-image {
             width: 100% !important;
             max-width: 900px !important; 
@@ -43,7 +64,7 @@
         .rph-custom-image {
             width: 100% !important;
             max-width: 900px;
-            height: 600px !important; 
+            height: 400px !important; 
             object-fit: cover;
             border-radius: 15px;
             margin: 0 auto 20px auto;
@@ -72,7 +93,6 @@
             font-weight: 800;
         }
 
-        /* Tampilan Default (Halaman Pertama) */
         .service-title-bg {
             background-color: #2a2a2a; 
             padding: 5px 15px;
@@ -81,14 +101,13 @@
             margin-bottom: 5px;
         }
 
-        /* Khusus Halaman Detail (Halaman Kedua) - Diperkecil */
         .detail-header .service-title-bg {
             padding: 2px 10px;
             border-radius: 5px;
         }
 
         .detail-header .service-title-bg h2 {
-            font-size: 1.4rem; /* Ukuran teks judul di halaman detail diperkecil agar proporsional */
+            font-size: 1.4rem; 
             margin: 0;
         }
 
@@ -138,6 +157,9 @@
             width: 100%;
             max-width: 1000px;
             margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .room-gallery {
@@ -263,7 +285,6 @@
         }
         header nav ul li a:hover, header nav ul li a.active { color: var(--color-primary); }
 
-        /* Style untuk Tombol Titik Tiga (Mobile) */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -417,7 +438,7 @@
         .detail-header {
             background: #2a2a2a;
             color: white;
-            padding: 40px 0; /* Padding header detail sedikit dikurangi */
+            padding: 40px 0; 
             text-align: center;
         }
 
@@ -492,18 +513,17 @@
             background-color: var(--color-misty-gray) !important;
         }
 
-        /* MEDIA QUERY UNTUK TAMPILAN HANDPHONE */
         @media (max-width: 768px) {
             header .container { 
                 padding: 0 20px;
             }
             
             .menu-toggle {
-                display: flex; /* Titik tiga muncul */
+                display: flex; 
             }
 
             header nav ul {
-                display: none; /* Menu disembunyikan secara default di mobile */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
@@ -516,7 +536,7 @@
             }
 
             header nav ul.show {
-                display: flex; /* Muncul ketika tombol diklik */
+                display: flex; 
             }
 
             header nav ul li {
@@ -539,6 +559,7 @@
             .rph-custom-image { height: 250px !important; }
             .gym-small-image { height: 250px !important; max-width: 100% !important; }
             .detail-header .service-title-bg h2 { font-size: 1.2rem; }
+            .note-card-cream { padding: 15px; margin-top: 20px; }
         }
     </style>
 </head>
@@ -693,7 +714,7 @@
             </div>
         </div>
         <div class="container detail-content">
-            <img src="rph.jpg" alt="Rumah Pintar Haan" class="rph-custom-image">
+            <img src="service.jpg" alt="Rumah Pintar Haan" class="rph-custom-image">
             
             <div class="description-box">
                 <p>BIMBEL & BINLAT KHUSUS KEDINASAN (RPH) est.2018. Pusat pelatihan khusus untuk persiapan masuk TARUNA, BINTARA, TAMTAMA, TNI, POLRI, IPDN, DAN Kedinasan lainnya</p>
@@ -716,7 +737,7 @@
                         <div class="item-card"><i class="fas fa-calculator"></i><span>Matematika</span></div>
                         <div class="item-card"><i class="fas fa-brain"></i><span>Psikologi</span></div>
                         <div class="item-card"><i class="fas fa-language"></i><span>Bahasa Indonesia</span></div>
-                        <div class="item-card"><i class="fas fa-globe-americas"></i><span>Bahasa Inggris</span></div>
+                        <div class="item-card"><i class="fas fa-language"></i><span>Bahasa Inggris</span></div>
                         <div class="item-card"><i class="fas fa-laptop"></i><span>CAT (Computer Assisted Test)</span></div>
                         <div class="item-card"><i class="fas fa-flag"></i><span>TWK (Tes Wawasan Kebangsaan)</span></div>
                         <div class="item-card"><i class="fas fa-graduation-cap"></i><span>TPA (Tes Kemampuan Akademik)</span></div>
@@ -731,21 +752,37 @@
                     <div class="room-card">
                         <img src="ruangkelas.jpg" alt="Ruang Belajar Akademik">
                         <div class="room-info">
-                            <p>Psikolog, Matematika, Bahasa Indonesia, Bahasa Inggris, TWK, TKA</p>
+                            <p>Ruang Pembelajaran Matematika, Bahasa Inggris,dan TKA</p>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <img src="ruangkelas1.jpg" alt="Ruang Kelas 1">
+                        <div class="room-info">
+                            <p>Ruang Pembelajaran <br>Bahasa Indonesia<br></p>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <img src="ruangkelas2.jpg" alt="Ruang Kelas 2">
+                        <div class="room-info">
+                            <p>Ruang Pembelajaran <br>Psikolog<br></p>
                         </div>
                     </div>
                     <div class="room-card">
                         <img src="ruangCAT1.jpg" alt="Ruang Belajar CAT">
                         <div class="room-info">
-                            <p>Ruang Pembelajaran CAT (Computer Assisted Test)</p>
+                            <p>Ruang Pembelajaran <br>CAT dan TWK<br></p>
                         </div>
                     </div>
                     <div class="room-card">
                         <img src="ruangJasmani1.jpg" alt="Ruang Belajar Jasmani">
                         <div class="room-info">
-                            <p>Ruang Pembelajaran Kesamaptaan Jasmani</p>
+                            <p>Ruang Pembelajaran <br>Kesamaptaan Jasmani<br></p>
                         </div>
                     </div>
+                </div>
+
+                <div class="note-card-cream">
+                    <p>"Hadirkan pengalaman belajar terbaik di ruang kelas yang dirancang khusus untuk kenyamanan maksimal. Dilengkapi dengan Full AC untuk menjaga suhu tetap sejuk, kebersihan ruangan yang higienis, serta fasilitas Wi-Fi berkecepatan tinggi guna mendukung riset dan pembelajaran digital tanpa hambatan. Lingkungan yang nyaman adalah kunci konsentrasi yang mendalam."</p>
                 </div>
             </div>
 
@@ -797,38 +834,28 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>© 2026 <b>RUMAH PINTAR HAAN</b>. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 <b>PT RUMAH PINTAR HAAN</b>. All rights reserved.</p>
     </footer>
 
     <script>
-        // Fungsi untuk buka-tutup menu mobile
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            document.querySelectorAll('nav ul li a').forEach(link => link.classList.remove('active'));
+            const navId = 'nav-' + (pageId.includes('detail') ? 'layanan' : pageId);
+            const activeNav = document.getElementById(navId);
+            if(activeNav) activeNav.classList.add('active');
+
+            window.scrollTo(0, 0);
+            
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('show');
+        }
+
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('show');
-        }
-
-        function showPage(pageId) {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-
-            const navLinks = document.querySelectorAll('header nav ul li a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            
-            if (pageId.includes('detail') || pageId === 'layanan') {
-                document.getElementById('nav-layanan').classList.add('active');
-            } else if (document.getElementById('nav-' + pageId)) {
-                document.getElementById('nav-' + pageId).classList.add('active');
-            }
-
-            // Menutup menu mobile setelah item diklik
-            const navMenu = document.getElementById('navLinks');
-            if (navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
-            }
         }
     </script>
 </body>
